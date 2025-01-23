@@ -203,7 +203,7 @@ function Freeze(ent)
 				local nearbyPlayer = GetEntityCoords(Ped)
 				
 				OpenText = "~w~กด ~w~[~y~Enter~w~] หากแมพโหลดเสร็จแล้ว"
-				ESX.ShowToolTip(scriptName, OpenText, nearbyPlayer)
+				DrawText3D(nearbyPlayer.x, nearbyPlayer.y, nearbyPlayer.z + 1.0, OpenText, 0.5)
 				
 				if IsControlJustReleased(0, 201) then
 					notfreeze = false
