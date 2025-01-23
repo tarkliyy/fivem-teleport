@@ -2,9 +2,9 @@
 
 fx_version "adamant"
 game "gta5"
-author "ThuglyK"
-description "Teleport Menu | Familie Edition"
-version "1.3.3.7"
+author "Rarisa"
+description "Teleport Menu"
+version "1.0.0"
 
 lua54 "yes"
 

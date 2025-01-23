@@ -144,8 +144,7 @@ function OpenMap(name)
 			local map_data = data.current.map
 			
 			menu.close()
-			exports["familie_scripts"]:Teleport(vector3(map.position.x,map.position.y,map.position.z))
-			-- Teleport(map_data)
+			Teleport(map_data)
 			
 		end,
 		
@@ -195,12 +194,6 @@ end
 
 function Freeze(ent)
 	
-	local ped = GetPlayerPed(-1)
-	local press_key = IsControlReleased
-	local press = IsControlPressed
-	local press_time = 0
-	
-	
 	Citizen.CreateThread(function()
 		while notfreeze do
 			Citizen.Wait(0)
@@ -209,7 +202,7 @@ function Freeze(ent)
 				local Ped = PlayerPedId()
 				local nearbyPlayer = GetEntityCoords(Ped)
 				
-				OpenText = "~w~กด ~w~[~y~Enter~w~] หากแมพโหลดเสร็จแล้ว \n              Familie ~r~Training"
+				OpenText = "~w~กด ~w~[~y~Enter~w~] หากแมพโหลดเสร็จแล้ว"
 				ESX.ShowToolTip(scriptName, OpenText, nearbyPlayer)
 				
 				if IsControlJustReleased(0, 201) then
@@ -433,13 +426,13 @@ function GateAnim(gate,map)
 			
 			}, function()
 			
-			exports["familie_scripts"]:Teleport(vector3(map.position.x,map.position.y,map.position.z))
+			Teleport(map)
 			
 		end)
 		
 		else
 		
-		exports["familie_scripts"]:Teleport(vector3(map.position.x,map.position.y,map.position.z))
+		Teleport(map)
 		
 	end
 	
